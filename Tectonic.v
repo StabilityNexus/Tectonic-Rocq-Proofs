@@ -1,13 +1,13 @@
 (** * Tectonic *)
 
-Require Import Reals.
-Require Import List.
-Require Import Lia.
-Require Import Lra.
-Require Import Coq.FSets.FMapList.
-Require Import Coq.Structures.OrderedTypeEx.
-Require Import Coq.FSets.FMapFacts.
-Require Import Psatz.
+From Stdlib Require Import Reals.
+From Stdlib Require Import List.
+From Stdlib Require Import Lia.
+From Stdlib Require Import Lra.
+From Stdlib Require Import FSets.FMapList.
+From Stdlib Require Import Structures.OrderedTypeEx.
+From Stdlib Require Import FSets.FMapFacts.
+From Stdlib Require Import Psatz.
 From RecordUpdate Require Import RecordUpdate.
 Import ListNotations.
 Local Open Scope R_scope.
@@ -16,9 +16,9 @@ Local Open Scope R_scope.
     These are just aliases for real numbers ([R]).
  *)
 
-Notation amount := R.
-Notation price := R.
-Notation timestamp := R.
+Abbreviation amount := R.
+Abbreviation price := R.
+Abbreviation timestamp := R.
 
 (** * Protocol parameters
     - [r_supcrit], the supercritical reserve ratio threshold
@@ -2560,7 +2560,7 @@ Proof.
 
     assert (Hneq : u <> h).
     {
-      intro Heq.x
+      intro Heq.
       subst u.
       apply Hnotin.
       exact Hu.
